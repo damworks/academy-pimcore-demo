@@ -119,8 +119,11 @@ framework:
                 provider: '%env(resolve:REDIS_DNS)%/%env(REDIS_DB_PORT)%'
 
 #### USE SESSION HANDLER CONFIGURED IN php.ini
-#    session:
-#        handler_id: null
+    session:
+        handler_id: '%env(resolve:REDIS_DNS)%/%env(REDIS_DB_PORT)%'
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'  # fallback when no handler_id is set
+        cookie_lifetime: 86400
+        gc_maxlifetime: 86400
 
 #### SYMFONY MAILER TRANSPORTS
 #    mailer:
