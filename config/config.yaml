@@ -126,9 +126,9 @@ framework:
         gc_maxlifetime: 86400
 
 #### SYMFONY MAILER TRANSPORTS
-#    mailer:
-#        transports:
-#            main: smtp://user:pass@smtp.example.com:port
+    mailer:
+        transports:
+            main: '%env(EMAIL_TRANSPORT)%' ## smtp://user:pass@smtp.example.com:port
 #            pimcore_newsletter: smtp://user:pass@smtp.example.com:port
 
 # pimcore_newsletter:
