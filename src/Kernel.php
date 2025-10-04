@@ -17,6 +17,7 @@ namespace App;
 
 use Pimcore\Bundle\AdminBundle\PimcoreAdminBundle;
 use Pimcore\Bundle\QuillBundle\PimcoreQuillBundle;
+use Pimcore\Bundle\SimpleBackendSearchBundle\PimcoreSimpleBackendSearchBundle;
 use Pimcore\HttpKernel\BundleCollection\BundleCollection;
 use Pimcore\Kernel as PimcoreKernel;
 
@@ -34,6 +35,9 @@ class Kernel extends PimcoreKernel
         }
         if (class_exists(PimcoreQuillBundle::class)) {
             $collection->addBundle(new PimcoreQuillBundle());
+        }
+        if (class_exists(PimcoreSimpleBackendSearchBundle::class)) {
+            $collection->addBundle(new PimcoreSimpleBackendSearchBundle());
         }
     }
 }
