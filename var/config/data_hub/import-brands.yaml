@@ -1,0 +1,88 @@
+pimcore_data_hub:
+    configurations:
+        import-brands:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: import-brands
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1759955913
+                createDate: 1759954994
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: /data-to-import/brands/brands.json
+            interpreterConfig:
+                type: json
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: brand
+                loadingStrategy:
+                    type: attribute
+                    settings:
+                        dataSourceIndex: name
+                        attributeName: brandName
+                        language: en
+                        includeUnpublished: true
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /brands
+                locationUpdateStrategy:
+                    type: staticPath
+                    settings:
+                        path: /brands
+                publishingStrategy:
+                    type: alwaysPublish
+            processingConfig:
+                executionType: parallel
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: key
+                    dataSourceIndex:
+                        - name
+                    settings:
+                        mode: both
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: key
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            settings:
+                                mode: both
+                            type: trim
+                -
+                    label: name
+                    dataSourceIndex:
+                        - name
+                    settings:
+                        mode: both
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: brandName
+                            language: en
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            settings:
+                                mode: both
+                            type: trim
+            executionConfig:
+                scheduleType: recurring
+                cronDefinition: ''
+                scheduledAt: ''
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }
