@@ -1,0 +1,107 @@
+pimcore_data_hub:
+    configurations:
+        import-warehouses:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: import-warehouses
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1759954707
+                createDate: 1759953272
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: /data-to-import/warehouses/warehouses.xlsx
+            interpreterConfig:
+                type: xlsx
+                settings:
+                    skipFirstRow: true
+                    sheetName: data
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: warehouse
+                loadingStrategy:
+                    type: attribute
+                    settings:
+                        dataSourceIndex: '0'
+                        attributeName: name
+                        language: ''
+                        includeUnpublished: true
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /warehouses
+                locationUpdateStrategy:
+                    type: staticPath
+                    settings:
+                        path: /warehouses
+                publishingStrategy:
+                    type: alwaysPublish
+            processingConfig:
+                executionType: parallel
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: name
+                    dataSourceIndex:
+                        - '0'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: name
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    settings:
+                        mode: both
+                    transformationPipeline:
+                        -
+                            settings:
+                                mode: both
+                            type: trim
+                -
+                    label: coordinate
+                    dataSourceIndex:
+                        - '1'
+                        - '2'
+                    transformationResultType: geoPoint
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: location
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            type: asGeopoint
+                -
+                    label: key
+                    dataSourceIndex:
+                        - '0'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: key
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    settings:
+                        mode: both
+                    transformationPipeline:
+                        -
+                            settings:
+                                mode: both
+                            type: trim
+            executionConfig:
+                scheduleType: recurring
+                cronDefinition: ''
+                scheduledAt: ''
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }
