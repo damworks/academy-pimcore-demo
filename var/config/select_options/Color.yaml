@@ -1,0 +1,38 @@
+pimcore:
+    objects:
+        select_options:
+            definitions:
+                Color:
+                    id: Color
+                    group: ''
+                    useTraits: ''
+                    implementsInterfaces: ''
+                    selectOptions:
+                        -
+                            value: Giallo
+                            label: Giallo
+                            name: ''
+                        -
+                            value: Blu
+                            label: Blu
+                            name: ''
+                        -
+                            value: Verde
+                            label: Verde
+                            name: ''
+                        -
+                            value: Rosso
+                            label: Rosso
+                            name: ''
+                        -
+                            value: Azzurro
+                            label: Azzurro
+                            name: ''
+                        -
+                            value: Grigio
+                            label: Grigio
+                            name: ''
+                        -
+                            value: Nero
+                            label: Nero
+                            name: ''
