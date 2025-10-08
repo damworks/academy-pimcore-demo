@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "561ebf5b8d9112a2668d776a0a00af4c",
+    "content-hash": "d83ae9ce254142ccb2399a5f1ac51bd0",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4472,16 +4472,16 @@
         },
         {
             "name": "pimcore/admin-ui-classic-bundle",
-            "version": "v1.7.12",
+            "version": "v1.7.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pimcore/admin-ui-classic-bundle.git",
-                "reference": "3517e6fd032ac7e161971e499553b8f32d0aec2c"
+                "reference": "5ffc9db6a7cb372c5c42346bdbf709ed337627e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pimcore/admin-ui-classic-bundle/zipball/3517e6fd032ac7e161971e499553b8f32d0aec2c",
-                "reference": "3517e6fd032ac7e161971e499553b8f32d0aec2c",
+                "url": "https://api.github.com/repos/pimcore/admin-ui-classic-bundle/zipball/5ffc9db6a7cb372c5c42346bdbf709ed337627e3",
+                "reference": "5ffc9db6a7cb372c5c42346bdbf709ed337627e3",
                 "shasum": ""
             },
             "require": {
@@ -4523,9 +4523,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pimcore/admin-ui-classic-bundle/issues",
-                "source": "https://github.com/pimcore/admin-ui-classic-bundle/tree/v1.7.12"
+                "source": "https://github.com/pimcore/admin-ui-classic-bundle/tree/v1.7.13"
             },
-            "time": "2025-09-29T10:46:27+00:00"
+            "time": "2025-10-08T12:22:13+00:00"
         },
         {
             "name": "pimcore/compatibility-bridge-v10",
