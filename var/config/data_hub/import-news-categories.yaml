@@ -1,0 +1,101 @@
+pimcore_data_hub:
+    configurations:
+        import-news-categories:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: import-news-categories
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1759957158
+                createDate: 1759956950
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: /data-to-import/newsCategories/newsCategories.json
+            interpreterConfig:
+                type: json
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: news_category
+                loadingStrategy:
+                    type: attribute
+                    settings:
+                        dataSourceIndex: title
+                        attributeName: name
+                        language: en
+                        includeUnpublished: true
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /news/categories
+                locationUpdateStrategy:
+                    type: staticPath
+                    settings:
+                        path: /news/categories
+                publishingStrategy:
+                    type: alwaysPublish
+            processingConfig:
+                executionType: parallel
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: title
+                    dataSourceIndex:
+                        - title
+                    settings:
+                        mode: both
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: name
+                            language: en
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            settings:
+                                mode: both
+                            type: trim
+                -
+                    label: description
+                    dataSourceIndex:
+                        - description
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: description
+                            language: en
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: key
+                    dataSourceIndex:
+                        - title
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: key
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    settings:
+                        mode: both
+                    transformationPipeline:
+                        -
+                            settings:
+                                mode: both
+                            type: trim
+            executionConfig:
+                scheduleType: recurring
+                cronDefinition: ''
+                scheduledAt: ''
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }
