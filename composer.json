@@ -12,9 +12,10 @@
   },
   "prefer-stable": true,
   "require": {
-    "pimcore/pimcore": "*",
-    "pimcore/platform-version": "^2024.4",    
     "pimcore/admin-ui-classic-bundle": "*",
+    "pimcore/data-importer": "^1.10",
+    "pimcore/pimcore": "*",
+    "pimcore/platform-version": "^2024.4",
     "pimcore/quill-bundle": "*",
     "symfony/amqp-messenger": "^6.2",
     "symfony/dotenv": "^6.2",
