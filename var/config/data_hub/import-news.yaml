@@ -1,0 +1,189 @@
+pimcore_data_hub:
+    configurations:
+        import-news:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: import-news
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1759996574
+                createDate: 1759993885
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: /data-to-import/news/news_complete2.json
+            interpreterConfig:
+                type: json
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: news
+                loadingStrategy:
+                    type: attribute
+                    settings:
+                        dataSourceIndex: id
+                        attributeName: title
+                        language: en
+                        includeUnpublished: true
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /news/data
+                locationUpdateStrategy:
+                    type: staticPath
+                    settings:
+                        path: /news/data
+                publishingStrategy:
+                    type: alwaysPublish
+            processingConfig:
+                executionType: sequential
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: key
+                    dataSourceIndex:
+                        - id
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: key
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: title
+                    dataSourceIndex:
+                        - title
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: title
+                            language: en
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: teaser
+                    dataSourceIndex:
+                        - content
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: teaser
+                            language: en
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: description
+                    dataSourceIndex:
+                        - content
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: description
+                            language: en
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: content
+                    dataSourceIndex:
+                        - content
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: content
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: date
+                    dataSourceIndex:
+                        - date
+                    transformationResultType: date
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: date
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    settings:
+                        format: Y-m-d
+                    transformationPipeline:
+                        -
+                            settings:
+                                format: Y-m-d
+                            type: date
+                -
+                    label: image
+                    dataSourceIndex:
+                        - image
+                    transformationResultType: asset
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: image
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    settings:
+                        parentFolder: /news/images
+                        useExisting: 'on'
+                        overwriteExisting: 'on'
+                        pregMatch: ''
+                    transformationPipeline:
+                        -
+                            settings:
+                                parentFolder: /news/images
+                                useExisting: 'on'
+                                overwriteExisting: 'on'
+                                pregMatch: ''
+                            type: importAsset
+                -
+                    label: categories
+                    dataSourceIndex:
+                        - categories
+                    settings:
+                        loadStrategy: attribute
+                        attributeDataObjectClassId: news_category
+                        attributeName: key
+                        attributeLanguage: ''
+                        loadUnpublished: 'on'
+                    transformationResultType: dataObjectArray
+                    dataTarget:
+                        type: manyToManyRelation
+                        settings:
+                            fieldName: categories
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                            overwriteMode: replace
+                    transformationPipeline:
+                        -
+                            type: asArray
+                        -
+                            settings:
+                                loadStrategy: attribute
+                                attributeDataObjectClassId: news_category
+                                attributeName: key
+                                attributeLanguage: ''
+                                loadUnpublished: 'on'
+                            type: loadDataObject
+            executionConfig:
+                scheduleType: recurring
+                cronDefinition: ''
+                scheduledAt: ''
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }
