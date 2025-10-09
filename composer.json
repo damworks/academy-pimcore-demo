@@ -13,6 +13,7 @@
   "prefer-stable": true,
   "require": {
     "pimcore/admin-ui-classic-bundle": "^1.7",
+    "pimcore/data-hub": "^1.9",
     "pimcore/data-importer": "^1.10",
     "pimcore/pimcore": "*",
     "pimcore/platform-version": "^2024.4",
