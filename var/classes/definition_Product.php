@@ -28,7 +28,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1759951898,
+   'modificationDate' => 1760083264,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -617,7 +617,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
                  'name' => 'relations',
-                 'title' => '',
+                 'title' => 'Relations',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -635,7 +635,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 ),
                  'allowedTypes' => 
                 array (
-                  0 => 'productRelations',
+                  0 => 'warehouseAvailability',
                 ),
                  'maxItems' => NULL,
                  'border' => false,
@@ -687,10 +687,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 ),
                  'classes' => 
                 array (
-                  0 => 
-                  array (
-                    'classes' => '',
-                  ),
                 ),
                  'displayMode' => NULL,
                  'pathFormatterClass' => '',
@@ -714,10 +710,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'documentsAllowed' => false,
                  'documentTypes' => 
                 array (
-                  0 => 
-                  array (
-                    'documentTypes' => '',
-                  ),
                 ),
                  'enableTextSelection' => false,
                  'width' => '',
