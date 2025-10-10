@@ -8,12 +8,12 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 path: null
-                modificationDate: 1759996574
+                modificationDate: 1760083885
                 createDate: 1759993885
             loaderConfig:
                 type: asset
                 settings:
-                    assetPath: /data-to-import/news/news_complete2.json
+                    assetPath: /data-to-import/news/data/news_complete2.json
             interpreterConfig:
                 type: json
             resolverConfig:
@@ -109,6 +109,8 @@ pimcore_data_hub:
                     label: date
                     dataSourceIndex:
                         - date
+                    settings:
+                        format: Y-m-d
                     transformationResultType: date
                     dataTarget:
                         type: direct
@@ -117,8 +119,6 @@ pimcore_data_hub:
                             language: ''
                             writeIfTargetIsNotEmpty: true
                             writeIfSourceIsEmpty: true
-                    settings:
-                        format: Y-m-d
                     transformationPipeline:
                         -
                             settings:
@@ -128,6 +128,11 @@ pimcore_data_hub:
                     label: image
                     dataSourceIndex:
                         - image
+                    settings:
+                        parentFolder: /news/images
+                        useExisting: 'on'
+                        overwriteExisting: 'on'
+                        pregMatch: ''
                     transformationResultType: asset
                     dataTarget:
                         type: direct
@@ -136,11 +141,6 @@ pimcore_data_hub:
                             language: ''
                             writeIfTargetIsNotEmpty: true
                             writeIfSourceIsEmpty: true
-                    settings:
-                        parentFolder: /news/images
-                        useExisting: 'on'
-                        overwriteExisting: 'on'
-                        pregMatch: ''
                     transformationPipeline:
                         -
                             settings:

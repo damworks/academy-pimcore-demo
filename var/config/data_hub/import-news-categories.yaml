@@ -8,12 +8,12 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 path: null
-                modificationDate: 1759957158
+                modificationDate: 1760083769
                 createDate: 1759956950
             loaderConfig:
                 type: asset
                 settings:
-                    assetPath: /data-to-import/newsCategories/newsCategories.json
+                    assetPath: /data-to-import/news/categories/newsCategories.json
             interpreterConfig:
                 type: json
             resolverConfig:
@@ -76,6 +76,8 @@ pimcore_data_hub:
                     label: key
                     dataSourceIndex:
                         - title
+                    settings:
+                        mode: both
                     transformationResultType: default
                     dataTarget:
                         type: direct
@@ -84,8 +86,6 @@ pimcore_data_hub:
                             language: ''
                             writeIfTargetIsNotEmpty: true
                             writeIfSourceIsEmpty: true
-                    settings:
-                        mode: both
                     transformationPipeline:
                         -
                             settings:
