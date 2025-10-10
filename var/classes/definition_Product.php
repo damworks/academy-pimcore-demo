@@ -28,7 +28,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1760083264,
+   'modificationDate' => 1760084733,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -297,6 +297,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'options' => NULL,
                  'defaultValue' => '',
                  'columnLength' => 190,
                  'dynamicOptions' => false,
@@ -636,6 +637,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowedTypes' => 
                 array (
                   0 => 'warehouseAvailability',
+                  1 => 'ProductRelations',
                 ),
                  'maxItems' => NULL,
                  'border' => false,
