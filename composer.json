@@ -12,6 +12,7 @@
   },
   "prefer-stable": true,
   "require": {
+    "illuminate/support": "^11.46",
     "pimcore/admin-ui-classic-bundle": "^1.7",
     "pimcore/data-hub": "^1.9",
     "pimcore/data-importer": "^1.10",
