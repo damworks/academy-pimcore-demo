@@ -66,7 +66,25 @@ services:
         autowire: true
         public: true
 
+    #
+    # LISTENERS
+    #
+    App\EventListener\PimcoreAdminListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.bundle_manager.paths.css, method: addCSSFiles }
+            - { name: kernel.event_listener, event: pimcore.bundle_manager.paths.js, method: addJSFiles }
 
+    #
+    # DATA IMPORTER - CUSTOM OPERATORS
+    #
+    App\Mapping\Operator\Simple\CaseConversion:
+        tags:
+            - { name: "pimcore.datahub.data_importer.operator", type: "caseConversion" }
+
+
+    App\Mapping\Operator\Simple\LoadOrCreateRelatedArticles:
+        tags:
+            - { name: 'pimcore.datahub.data_importer.operator', type: 'LoadOrCreateRelatedArticles' }
 
     # Example custom templating helper
     # App\Templating\Helper\Example:
