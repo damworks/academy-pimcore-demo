@@ -1,0 +1,130 @@
+pimcore_data_hub:
+    configurations:
+        import-oway-products:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: import-oway-products
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1760134237
+                createDate: 1760129435
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: /data-to-import/oway-products/import-oway-more-relations.json
+            interpreterConfig:
+                type: json
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: prdOway
+                loadingStrategy:
+                    type: attribute
+                    settings:
+                        dataSourceIndex: 'Codice Articolo'
+                        attributeName: codiceArt
+                        language: ''
+                        includeUnpublished: true
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /prdOway
+                locationUpdateStrategy:
+                    type: staticPath
+                    settings:
+                        path: /prdOway
+                publishingStrategy:
+                    type: alwaysPublish
+            processingConfig:
+                executionType: parallel
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: key
+                    dataSourceIndex:
+                        - 'Codice Articolo'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: key
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: codiceArticolo
+                    dataSourceIndex:
+                        - 'Codice Articolo'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: codiceArt
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: descrizione
+                    dataSourceIndex:
+                        - Descrizione
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: descrizione
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: barcode
+                    dataSourceIndex:
+                        - 'Barcode Principale'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: barcode
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: relations
+                    dataSourceIndex:
+                        - Relations
+                    settings:
+                        loadStrategy: attribute
+                        attributeDataObjectClassId: prdOway
+                        attributeName: codiceArt
+                        attributeLanguage: ''
+                        loadUnpublished: 'on'
+                    transformationResultType: dataObjectArray
+                    dataTarget:
+                        type: manyToManyRelation
+                        settings:
+                            fieldName: relatedArticles
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                            overwriteMode: merge
+                    transformationPipeline:
+                        -
+                            settings:
+                                loadStrategy: attribute
+                                attributeDataObjectClassId: prdOway
+                                attributeName: codiceArt
+                                attributeLanguage: ''
+                                loadUnpublished: 'on'
+                            type: LoadOrCreateRelatedArticles
+            executionConfig:
+                scheduleType: recurring
+                cronDefinition: ''
+                scheduledAt: ''
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }
