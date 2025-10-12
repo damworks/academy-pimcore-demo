@@ -1,0 +1,29 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    news_preview:
+                        items:
+                            -
+                                method: cover
+                                arguments:
+                                    width: 400
+                                    height: 400
+                                    positioning: center
+                                    forceResize: false
+                        medias: {  }
+                        name: news_preview
+                        description: ''
+                        group: news
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        forceProcessICCProfiles: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: true
+                        modificationDate: 1760255929
+                        creationDate: 1760255887
+                        preserveAnimation: false
