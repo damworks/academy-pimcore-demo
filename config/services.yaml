@@ -58,6 +58,13 @@ services:
     App\Command\:
         resource: '../src/Command/*'
         tags: [ 'console.command' ]
+    #
+    # SERVICES
+    #
+    App\Service\:
+        resource: '../src/Service/'
+        autowire: true
+        public: true
 
 
 
