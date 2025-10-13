@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 path: null
-                modificationDate: 1760134237
+                modificationDate: 1760340746
                 createDate: 1760129435
             loaderConfig:
                 type: asset
@@ -52,7 +52,15 @@ pimcore_data_hub:
                             language: ''
                             writeIfTargetIsNotEmpty: true
                             writeIfSourceIsEmpty: true
-                    transformationPipeline: {  }
+                    settings:
+                        search: /
+                        replace: '-'
+                    transformationPipeline:
+                        -
+                            settings:
+                                search: /
+                                replace: '-'
+                            type: stringReplace
                 -
                     label: codiceArticolo
                     dataSourceIndex:
@@ -120,6 +128,71 @@ pimcore_data_hub:
                                 attributeLanguage: ''
                                 loadUnpublished: 'on'
                             type: LoadOrCreateRelatedArticles
+                -
+                    label: 'descrizione EN'
+                    dataSourceIndex:
+                        - Descrizione_en
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: descrizioneLoc
+                            language: en
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: gruppo
+                    dataSourceIndex:
+                        - 'Gruppo articoli'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: gruppo
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: brand
+                    dataSourceIndex:
+                        - Brand
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: brand
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: sub-brand
+                    dataSourceIndex:
+                        - Sub-Brand
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: subBrand
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: linea
+                    dataSourceIndex:
+                        - Linea
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: linea
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
             executionConfig:
                 scheduleType: recurring
                 cronDefinition: ''
