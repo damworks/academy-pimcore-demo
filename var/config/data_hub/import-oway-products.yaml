@@ -6,9 +6,9 @@ pimcore_data_hub:
                 type: dataImporterDataObject
                 name: import-oway-products
                 description: ''
-                group: ''
+                group: test
                 path: null
-                modificationDate: 1760340746
+                modificationDate: 1760340971
                 createDate: 1760129435
             loaderConfig:
                 type: asset
