@@ -1,0 +1,14 @@
+webpack_encore:
+    output_path: '%kernel.project_dir%/public/build'
+    script_attributes:
+        defer: true
+    # Uncomment the following line if you use TypeScript
+    # ts_config_file: '%kernel.project_dir%/tsconfig.json'
+    # Uncomment the following line if you use React
+    # react: true
+    # Uncomment the following line if you use Sass/SCSS
+    # sass: true
+    # Uncomment the following line if you use Less
+    # less: true
+    # Uncomment the following line if you use Vue.js
+    # vue: true

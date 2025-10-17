@@ -9,4 +9,5 @@ return [
     PimcoreDataHubBundle::class => ['all' => true],
     PimcoreDataImporterBundle::class => ['all' => true],
     PimcorePerspectiveEditorBundle::class => ['all' => true],
+    \Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
 ];

@@ -1,0 +1,29 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    galleryCarouselPreview:
+                        items:
+                            -
+                                method: cover
+                                arguments:
+                                    width: 100
+                                    height: 54
+                                    positioning: center
+                                    forceResize: false
+                        medias: {  }
+                        name: galleryCarouselPreview
+                        description: ''
+                        group: areas
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        forceProcessICCProfiles: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1760679549
+                        creationDate: 1760679491
+                        preserveAnimation: false

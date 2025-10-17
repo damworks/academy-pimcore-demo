@@ -14,6 +14,11 @@ class DefaultController extends FrontendController
         return $this->render('default/default.html.twig');
     }
 
+    public function footerAction(Request $request): Response
+    {
+        return $this->render('include/footer.html.twig');
+    }
+
     /**
      * Forwards the request to admin login
      */

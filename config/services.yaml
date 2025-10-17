@@ -67,6 +67,14 @@ services:
         public: true
 
     #
+    # TWIG EXTENSIONS
+    #
+
+    App\Twig\Extension\:
+        resource: '../src/Twig/Extension/*'
+        tags: [ 'twig.extension' ]
+
+    #
     # LISTENERS
     #
     App\EventListener\PimcoreAdminListener:

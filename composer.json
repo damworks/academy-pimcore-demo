@@ -12,6 +12,7 @@
   },
   "prefer-stable": true,
   "require": {
+    "ext-fileinfo": "*",
     "illuminate/support": "^11.46",
     "pimcore/admin-ui-classic-bundle": "^1.7",
     "pimcore/data-hub": "^1.9",
@@ -23,7 +24,7 @@
     "symfony/amqp-messenger": "^6.2",
     "symfony/dotenv": "^6.2",
     "symfony/runtime": "^6.2",
-    "ext-fileinfo": "*"
+    "symfony/webpack-encore-bundle": "^2.3"
   },
   "require-dev": {
     "codeception/codeception": "^5.0.3",
