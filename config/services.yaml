@@ -1,5 +1,6 @@
 parameters:
     secret: IzrKxzeY604TQu4tiD1ZnnGFx1KkaaLh8d0jdMQHlSQ=
+    site_protocol: '%env(SITE_PROTOCOL)%'
 
     # customize the full path to external executables
     # normally they are auto-detected by `which program` or auto-discovered in the configured path in
@@ -81,6 +82,12 @@ services:
         tags:
             - { name: kernel.event_listener, event: pimcore.bundle_manager.paths.css, method: addCSSFiles }
             - { name: kernel.event_listener, event: pimcore.bundle_manager.paths.js, method: addJSFiles }
+
+    #
+    # Link generators
+    #
+    App\Website\LinkGenerator\BlogPostLinkGenerator:
+        public: true
 
     #
     # DATA IMPORTER - CUSTOM OPERATORS
