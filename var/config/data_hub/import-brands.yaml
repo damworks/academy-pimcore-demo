@@ -8,12 +8,12 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 path: null
-                modificationDate: 1759956234
+                modificationDate: 1760545443
                 createDate: 1759954994
             loaderConfig:
                 type: push
                 settings:
-                    apiKey: 8de5f317adacf81e459b462f368f5280
+                    apiKey: 8f1e59c97755a296c812e8f8c118bc7a
                     ignoreNotEmptyQueue: 'on'
             interpreterConfig:
                 type: json
@@ -32,9 +32,11 @@ pimcore_data_hub:
                     settings:
                         path: /brands
                 locationUpdateStrategy:
-                    type: noChange
+                    type: staticPath
+                    settings:
+                        path: /brands
                 publishingStrategy:
-                    type: noChangeUnpublishNew
+                    type: alwaysPublish
             processingConfig:
                 executionType: parallel
                 idDataIndex: ''
