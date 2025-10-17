@@ -1,0 +1,227 @@
+pimcore_data_hub:
+    configurations:
+        oway-products-api:
+            general:
+                active: true
+                type: graphql
+                name: oway-products-api
+                description: ''
+                group: test
+                sqlObjectCondition: ''
+                modificationDate: 1760458864
+                path: null
+                createDate: 1760444147
+            schema:
+                queryEntities:
+                    PrdOway:
+                        id: PrdOway
+                        name: PrdOway
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: codiceArt
+                                        label: 'Codice Art'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: barcode
+                                        label: Barcode
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: descrizione
+                                        label: Descrizione
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: descrizioneLoc
+                                        label: 'Descrizione Localized'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: gruppo
+                                        label: 'Gruppo  Articoli'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: brand
+                                        label: Brand
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: subBrand
+                                        label: Sub-Brand
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: linea
+                                        label: Linea
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: articoloMagazzino
+                                        label: 'Articolo  Magazzino'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: relatedArticles
+                                        label: 'Related Articles'
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                mutationEntities:
+                    PrdOway:
+                        id: PrdOway
+                        name: PrdOway
+                        update: true
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: codiceArt
+                                        label: 'Codice Art'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: barcode
+                                        label: Barcode
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: descrizione
+                                        label: Descrizione
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    isOperator: true
+                                    attributes:
+                                        label: descrizioneLocCollector
+                                        type: operator
+                                        class: LocaleCollector
+                                        children:
+                                            -
+                                                isOperator: false
+                                                attributes:
+                                                    label: 'Descrizione Localized (descrizioneLoc)'
+                                                    type: value
+                                                    class: DefaultValue
+                                                    attribute: descrizioneLoc
+                                                    dataType: input
+                                                    children: {  }
+                                    key: '#68ee739c41894'
+                                -
+                                    attributes:
+                                        attribute: gruppo
+                                        label: 'Gruppo  Articoli'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: brand
+                                        label: Brand
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: subBrand
+                                        label: Sub-Brand
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: linea
+                                        label: Linea
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: articoloMagazzino
+                                        label: 'Articolo  Magazzino'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: relatedArticles
+                                        label: 'Related Articles'
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                        create: true
+                        delete: true
+                specialEntities:
+                    document:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    document_folder:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    asset:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    asset_folder:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    asset_listing:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    object_folder:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    translation:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    translation_listing:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+            security:
+                method: datahub_apikey
+                apikey:
+                    - 7a7ac1a9aed5b42e17d84a4b448b43c6
+                skipPermissionCheck: false
+                disableIntrospection: false
+            workspaces:
+                asset: {  }
+                document: {  }
+                object:
+                    -
+                        read: true
+                        cpath: /prdOway
+                        create: true
+                        update: true
+                        delete: true
+                        id: extModel7074-1
+            permissions:
+                user:
+                    -
+                        id: 2
+                        name: admin
+                        read: true
+                        update: true
+                        delete: true
+                role: {  }
