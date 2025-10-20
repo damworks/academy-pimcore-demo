@@ -19,6 +19,7 @@
  * - codiceITF [input]
  * - barcode [input]
  * - prezzoUnitario [input]
+ * - dataTest [objectbricks]
  * - gruppo [input]
  * - brand [input]
  * - subBrand [input]
@@ -33,7 +34,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1760624110,
+   'modificationDate' => 1760956091,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -684,6 +685,32 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'datatype' => 'layout',
                          'children' => 
                         array (
+                          0 => 
+                          \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
+                             'name' => 'dataTest',
+                             'title' => 'Data Test',
+                             'tooltip' => '',
+                             'mandatory' => false,
+                             'noteditable' => false,
+                             'index' => false,
+                             'locked' => false,
+                             'style' => '',
+                             'permissions' => NULL,
+                             'fieldtype' => '',
+                             'relationType' => false,
+                             'invisible' => false,
+                             'visibleGridView' => false,
+                             'visibleSearch' => false,
+                             'blockedVarsForExport' => 
+                            array (
+                            ),
+                             'allowedTypes' => 
+                            array (
+                              0 => 'testData',
+                            ),
+                             'maxItems' => NULL,
+                             'border' => false,
+                          )),
                         ),
                          'locked' => false,
                          'blockedVarsForExport' => 

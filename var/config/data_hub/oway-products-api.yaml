@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: ''
                 group: test
                 sqlObjectCondition: ''
-                modificationDate: 1760458864
+                modificationDate: 1760961586
                 path: null
                 createDate: 1760444147
             schema:
@@ -78,6 +78,30 @@ pimcore_data_hub:
                                         label: 'Related Articles'
                                         dataType: manyToManyObjectRelation
                                     isOperator: false
+                                -
+                                    attributes:
+                                        attribute: testData~testInput
+                                        label: 'Test Input'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: testData~testTextarea
+                                        label: 'Test Textarea'
+                                        dataType: textarea
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: testData~testNumber
+                                        label: 'Test Number'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: testData~testDate
+                                        label: 'Test Date'
+                                        dataType: date
+                                    isOperator: false
                 mutationEntities:
                     PrdOway:
                         id: PrdOway
@@ -119,7 +143,7 @@ pimcore_data_hub:
                                                     attribute: descrizioneLoc
                                                     dataType: input
                                                     children: {  }
-                                    key: '#68ee739c41894'
+                                    key: '#68f60f3adc3fd'
                                 -
                                     attributes:
                                         attribute: gruppo
@@ -155,6 +179,30 @@ pimcore_data_hub:
                                         attribute: relatedArticles
                                         label: 'Related Articles'
                                         dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: testData~testInput
+                                        label: 'Test Input'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: testData~testTextarea
+                                        label: 'Test Textarea'
+                                        dataType: textarea
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: testData~testNumber
+                                        label: 'Test Number'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: testData~testDate
+                                        label: 'Test Date'
+                                        dataType: date
                                     isOperator: false
                         create: true
                         delete: true
