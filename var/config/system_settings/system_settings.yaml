@@ -3,13 +3,21 @@ pimcore:
         domain: ''
         redirect_to_maindomain: false
         valid_languages:
+            - it
             - en
-            - de
             - fr
+            - de
+            - es
+            - nl_NL
+            - pl
         fallback_languages:
+            it: ''
             en: ''
-            de: ''
             fr: ''
+            de: ''
+            es: ''
+            nl_NL: ''
+            pl: ''
         required_languages:
             - en
         default_language: en
@@ -21,9 +29,13 @@ pimcore:
         error_pages:
             default: ''
             localized:
+                it: ''
                 en: ''
-                de: ''
                 fr: ''
+                de: ''
+                es: ''
+                nl_NL: ''
+                pl: ''
     objects:
         versions:
             days: null
