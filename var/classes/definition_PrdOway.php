@@ -95,7 +95,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1761672864,
+   'modificationDate' => 1763281006,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',

@@ -7,7 +7,7 @@ pimcore:
                     name: stockManager
                     description: ''
                     creationDate: 1760173327
-                    modificationDate: 1760173353
+                    modificationDate: 1763280971
                     userOwner: 2
                     classId: product
                     layoutDefinitions:

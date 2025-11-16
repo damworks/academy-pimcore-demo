@@ -28,7 +28,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1760084733,
+   'modificationDate' => 1763280970,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -297,7 +297,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
-                 'options' => NULL,
                  'defaultValue' => '',
                  'columnLength' => 190,
                  'dynamicOptions' => false,

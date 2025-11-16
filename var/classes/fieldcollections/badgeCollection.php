@@ -61,10 +61,6 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
             ),
              'classes' => 
             array (
-              0 => 
-              array (
-                'classes' => '',
-              ),
             ),
              'displayMode' => 'grid',
              'pathFormatterClass' => '',
